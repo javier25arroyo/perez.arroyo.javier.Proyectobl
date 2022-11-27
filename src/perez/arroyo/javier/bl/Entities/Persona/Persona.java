@@ -1,30 +1,28 @@
-package perez.arroyo.javier.bl.Entities.Usuario;
+package perez.arroyo.javier.bl.Entities.Persona;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Usuario {
+public class Persona {
     private String nombre;
     private String apellido;
     private int cedula;
     private String correo;
     private String direccion;
-    private String nacionalidad;
+    private int edad;
     private LocalDate fechaDeNacimiento;
-    private LocalDate edad;
 
-    public Usuario() {
+    public Persona() {
     }
 
-    public Usuario(String nombre, String apellido, int cedula, String correo, String direccion, String nacionalidad, LocalDate fechaDeNacimiento, LocalDate edad) {
+    public Persona(String nombre, String apellido, int cedula, String correo, String direccion, int edad, LocalDate fechaDeNacimiento) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
         this.correo = correo;
         this.direccion = direccion;
-        this.nacionalidad = nacionalidad;
-        this.fechaDeNacimiento = fechaDeNacimiento;
         this.edad = edad;
+        this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
     public String getNombre() {
@@ -67,12 +65,12 @@ public class Usuario {
         this.direccion = direccion;
     }
 
-    public String getNacionalidad() {
-        return nacionalidad;
+    public int getEdad() {
+        return edad;
     }
 
-    public void setNacionalidad(String nacionalidad) {
-        this.nacionalidad = nacionalidad;
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
 
     public LocalDate getFechaDeNacimiento() {
@@ -83,25 +81,16 @@ public class Usuario {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
-    public LocalDate getEdad() {
-        return edad;
-    }
-
-    public void setEdad(LocalDate edad) {
-        this.edad = edad;
-    }
-
     @Override
     public String toString() {
-        return "Usuario{" +
+        return "Persona{" +
                 "nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
                 ", cedula=" + cedula +
                 ", correo='" + correo + '\'' +
                 ", direccion='" + direccion + '\'' +
-                ", nacionalidad='" + nacionalidad + '\'' +
-                ", fechaDeNacimiento=" + fechaDeNacimiento +
                 ", edad=" + edad +
+                ", fechaDeNacimiento=" + fechaDeNacimiento +
                 '}';
     }
 
@@ -109,8 +98,8 @@ public class Usuario {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Usuario usuario = (Usuario) o;
-        return cedula == usuario.cedula;
+        Persona persona = (Persona) o;
+        return cedula == persona.cedula;
     }
 
     @Override
